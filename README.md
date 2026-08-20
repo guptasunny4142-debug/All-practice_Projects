@@ -1,5 +1,7 @@
 # All-Projects
 
+**Apple Retail Sales SQL Project - Analyzing Millions of Sales Rows**
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Apple Sales Project with 1M rows seles Datasets
 
 ```select * from category;
