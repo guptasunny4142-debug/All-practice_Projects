@@ -9,41 +9,42 @@ select * from stores;
 select * from warranty;
 ```
 -- EDA
-select distinct repair_status from warranty;
+```select distinct repair_status from warranty;
 select count(*) from sales;
-
+```
 -- Improving Query Performance
 
 -- ET - 126.ms
 -- PT - 0.157 ms
 -- ET After index - 30-40 ms
-EXPLAIN ANALYZE
+```EXPLAIN ANALYZE
 select * from sales
 where product_id = '3'
-
+```
 create index sales_product_id on sales(product_id);
 
 
 -- ET - 121.ms
 -- PT - 0.153ms
 -- ET After index - 40-50ms
-EXPLAIN ANALYZE
+```EXPLAIN ANALYZE
 select * from sales
 where store_id = '10'
 
 create index sales_store_id on sales(store_id);
-
+```
 -- Business Problem
 
 -- 1.Find the number of stores in each country.
+```
 select  country,
         count(store_id) as tatal_store
 from stores
 Group by 1
 order by 2 desc
-
+```
 -- 2.Calculate the total number of units sold by each store.
-
+```
 select s.store_id,
        st.store_name,
        sum(s.quantity) as Total_unit_sales
@@ -52,7 +53,7 @@ join stores as st
 on st.store_id = s.store_id
 group by 1, 2
 order by 3 desc
-
+```
 -- 3.Identify how many sales occurred in December 2023.
 
 select count(sale_id) as total_sales
