@@ -141,7 +141,8 @@ group by 1 , 2, 3
 as t1
 where rank = 1
 ```
--- Medium to Hard Questions
+-- **Medium to Hard Questions**
+
 -- 11. Identify the least selling product in each country for each year based on total units sold.
 ```
 with product_rank
