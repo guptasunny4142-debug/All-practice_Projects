@@ -20,9 +20,9 @@ select count(*) from sales;
 ```EXPLAIN ANALYZE
 select * from sales
 where product_id = '3'
-```
-create index sales_product_id on sales(product_id);
 
+create index sales_product_id on sales(product_id);
+```
 
 -- ET - 121.ms
 -- PT - 0.153ms
