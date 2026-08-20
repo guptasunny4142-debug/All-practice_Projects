@@ -403,3 +403,32 @@ on s.product_id = p.product_id
 group by 1 , 2
 order by 1 , 3 desc
 ```
+**Project Focus**
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+This project primarily focuses on developing and showcasing the following SQL skills:
+
+1.**Complex Joins and Aggregations:** Demonstrating the ability to perform complex SQL joins and aggregate data meaningfully.
+
+2.**Window Functions:** Using advanced window functions for running totals, growth analysis, and time-based queries.
+
+3.**Data Segmentation:** Analyzing data across different time frames to gain insights into product performance.
+
+4.**Correlation Analysis:** Applying SQL functions to determine relationships between variables, such as product price and warranty claims.
+
+5.**Real-World Problem Solving:** Answering business-related questions that reflect real-world scenarios faced by data analysts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
