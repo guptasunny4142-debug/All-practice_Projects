@@ -1,4 +1,5 @@
 # All-Projects
+<img width="3920" height="2612" alt="image" src="https://github.com/user-attachments/assets/e1e336aa-ffd3-4927-8ace-42764a8f0b70" />
 
 **Apple Retail Sales SQL Project - Analyzing Millions of Sales Rows**
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
