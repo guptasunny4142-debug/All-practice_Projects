@@ -12,12 +12,16 @@ select * from warranty;
 ```select distinct repair_status from warranty;
 select count(*) from sales;
 ```
--- Improving Query Performance
+-- **Improving Query Performance**
 
 -- ET - 126.ms
+
 -- PT - 0.157 ms
+
 -- ET After index - 30-40 ms
+
 ```EXPLAIN ANALYZE
+
 select * from sales
 where product_id = '3'
 
