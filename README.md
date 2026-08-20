@@ -33,7 +33,7 @@ where store_id = '10'
 
 create index sales_store_id on sales(store_id);
 ```
--- Business Problem
+-- **Business Problem**
 
 -- 1.Find the number of stores in each country.
 ```
@@ -227,7 +227,8 @@ where claim_date >= current_date - interval '2 year'
 group by 1
 order by 2 desc
 ```
--- Complex Problems
+-- **Complex Problems**
+
 -- 16. Determine the percentage chance of receiving warranty claims after each purchase for each country.
 ```
 select country,
