@@ -317,20 +317,7 @@ order by 2 desc
 ```
 -------------------------------------------------------------------------------------------------------------------------------
 
-select 
-      case when p.price < 500 then 'less expence product'
-	  when p.price between 500 and 1000 then 'Mid range product'
-	  else 'expensive Product'
-	  end as price_segment,
-	  count(w.claim_id) as total_claim
-from warranty as w
-join sales as s 
-on w.sale_id = s.sale_id
-join products as p
-on p.product_id = s.product_id
-where claim_date >=current_date - interval '5 year'
-group by 1
-order by 2
+
 	  
 -- 19. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed.  
 ```
@@ -369,46 +356,10 @@ join stores as st
 on tp.store_id = st.store_id
 ```
 --------------------------------------------------------------------------------------------------------------------------
-select * from warranty
-with paid_Repaired
-as
-(
-  select 
-       s.store_id,
-	   count(w.repair_status) as paid_Repaired
-from warranty as w 
-Right Join sales as s 
-on w.sale_id = s.sale_id
-where repair_status = 'Paid Repaired'
-group by 1
-),
-
-Other_repaired
-as 
-(
-  select 
-         s.store_id,
-		 count(w.repair_status) as Other_repaired
-  from warranty as w 
-  Right Join sales as s 
-  on w.sale_id = s.sale_id
-  group by 1  
-)
-select 
-      pr.store_id,
-	  st.store_name,
-	  pr.paid_Repaired,
-	  tr.Other_repaired,
-	  ROUND(pr.paid_Repaired ::numeric/tr.Other_repaired ::numeric *100, 2) AS Percentage_paid_repaired
-from paid_Repaired as pr
-join Other_repaired as tr
-on pr.store_id = tr.store_id
-join stores as st
-on st.store_id =pr.store_id
 
 -- 20. Write a query to calculate the monthly running total of sales for each store over the past four years
 -- and compare trends during this period.	  
-	  
+```	  
 WITH monthly_sale
 AS
 (
@@ -430,11 +381,10 @@ SELECT
 	   Total_revenue,
 	   sum(Total_revenue) over(partition by store_id order by month, year ) as running_total
 from monthly_sale	   
-
--- 12. Analyze product sales trends over time, segmented into key periods: from launch to 6 months, 6-12 months,
+```
+-- 21. Analyze product sales trends over time, segmented into key periods: from launch to 6 months, 6-12 months,
 -- 12-18 months, and beyond 18 months.
-	333
-	3
+```
 select 
      p.product_name,
 	   case
@@ -449,3 +399,4 @@ join products as p
 on s.product_id = p.product_id
 group by 1 , 2
 order by 1 , 3 desc
+```
